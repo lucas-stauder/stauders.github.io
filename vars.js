@@ -5,7 +5,7 @@ var time=0,period=1,waveLength=3;
 var amplitudeInput,amplitudeButton;
 var  waveLengthInput, waveLengthButton;
 var cnv,timeSteps=0.02;
-var yOffset=height/4;
+var yOffset;
 var deltaT;
 var displayTime;
 var pause=false,pauseButton;

@@ -2,6 +2,7 @@
 
 function setup() {
   cnv = createCanvas(1024,600);
+  yOffset = height/3;
   amplitudeInput = select("#Amplitude");
   amplitudeButton = select("#AmplitudeButton");
   waveLengthInput = select("#waveLength");
