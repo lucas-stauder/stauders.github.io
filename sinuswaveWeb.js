@@ -14,7 +14,7 @@ function setup() {
 function draw() {
   background(255);
   var i;
-  for(i=0;i < clamp(Math.round(period*waveLength*time),0,osziLength);i++){
+  for(i=0;i < clamp(vPhase*time,0,osziLength);i++){
     oszilators[i]= wave(i,time);
   }
   fill(250, 0, 0);
@@ -23,7 +23,6 @@ function draw() {
      
       ellipse(i + (width/(3+osziLength))*i, oszilators[i-1]+yOffset,5,5);
   }
-  console.log(osziLength);
   displayTime.html("Zeit :"+time.toFixed(2));
   if(!pause){
     time+=timeSteps;

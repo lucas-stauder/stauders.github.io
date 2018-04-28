@@ -1,5 +1,5 @@
 function wave(way,time){
-    return Math.round(Amplitude*Math.sin((time/period)-(way/waveLength)));
+    return Amplitude*Math.sin((time/period())-(way/waveLength));
   }
   function clamp(val, min, max) {   
       return Math.max(min, Math.min(max, val));
@@ -11,7 +11,7 @@ function wave(way,time){
     Amplitude = amplitudeInput.value();
   }
   function waveLengthChanged(){
-    waveLength = waveLengthInput.value()/2;
+    waveLength = waveLengthInput.value();
   }
   function osziLengthChanged(){
     osziLength = osziLengthInput.value();
@@ -32,4 +32,10 @@ function osziNull(){
   for(i=0;i < osziLength;i++){
     oszilators[i]= 0;
   }
+}
+function vPhaseChanged(){
+  vPhase = vPhaseInput.value();
+}
+function period(){
+  return vPhase/waveLength;
 }
