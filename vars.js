@@ -1,4 +1,4 @@
-var osziLength =100;
+var osziLength =100,osziLengthButton,osziLengthInput;
 var oszilators = [osziLength];
 var Amplitude=60;
 var time=0,period=1,waveLength=3;
@@ -28,4 +28,8 @@ function init(){
     displayTime = select("#displayTime");
     resetButton = select("#resetButton");
     resetButton.mousePressed(resetButtonPressed);
+    osziLengthButton = select("#osziLengthButton");
+    osziLengthInput = select("#osziLength");
+    osziLengthInput.value(osziLength);
+    osziLengthButton.mousePressed();
 }

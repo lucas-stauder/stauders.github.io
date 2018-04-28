@@ -13,15 +13,23 @@ function wave(way,time){
   function waveLengthChanged(){
     waveLength = waveLengthInput.value()/2;
   }
+  function osziLengthChanged(){
+    osziLength = osziLengthInput.value();
+    oszilators = [osziLength];
+    osziNull();
+  }
   function DeltaTChanged(){
     timeSteps = deltaT.value();
   }
   function resetButtonPressed(){
       time=0;
-      for(i=0;i < osziLength;i++){
-        oszilators[i]= 0;
-      }
+      osziNull();
   }
 function pauseButtonPressed(){
     pause = !pause;
+}
+function osziNull(){
+  for(i=0;i < osziLength;i++){
+    oszilators[i]= 0;
+  }
 }

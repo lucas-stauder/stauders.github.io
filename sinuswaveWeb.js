@@ -7,9 +7,7 @@ function setup() {
   frameRate(60);
   background(1);
   var i;
-  for(i=0;i < osziLength;i++){
-    oszilators[i]= 0;
-  }
+  osziNull();
 }
 
 
