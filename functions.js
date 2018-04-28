@@ -32,11 +32,12 @@ function pauseButtonPressed(){
 function osziNull(){
   for(i=0;i < osziLength;i++){
     oszilators[i]= 0;
+    oszilatorsBool[i]=0;
   }
 }
 function vPhaseChanged(){
   vPhase = vPhaseInput.value();
 }
 function period(){
-  return vPhase/waveLength;
+  return waveLength/vPhase;
 }

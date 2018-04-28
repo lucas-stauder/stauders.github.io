@@ -1,5 +1,6 @@
 var osziLength =100,osziLengthButton,osziLengthInput;
 var oszilators = [osziLength];
+var oszilatorsBool = [osziLength];
 var Amplitude=60;
 var time=0,period,waveLength=3,vPhase=3;
 var amplitudeInput,amplitudeButton;

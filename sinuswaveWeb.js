@@ -14,14 +14,18 @@ function setup() {
 function draw() {
   background(255);
   var i;
-  for(i=0;i < clamp(vPhase*time,0,osziLength);i++){
-    oszilators[i]= wave(i,time);
+  for(i=0;i<osziLength;i++){
+      if((i)/vPhase<time){
+        oszilators[i]= wave(i,time);
+      }else{
+        oszilators[i]= 0;
+      }
+    
   }
   fill(250, 0, 0);
   var i;
   for(i = 1; i < osziLength+1; i++){
-     
-      ellipse(i + xOffset*i, oszilators[i-1]+yOffset,5,5);
+      ellipse((i-1) + xOffset*(i-1), oszilators[i-1]+yOffset,5,5);
   }
   displayTime.html("Zeit :"+time.toFixed(2));
   if(!pause){
