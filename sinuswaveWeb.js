@@ -3,22 +3,7 @@
 function setup() {
   cnv = createCanvas(1024,600);
   yOffset = height/3;
-  amplitudeInput = select("#Amplitude");
-  amplitudeButton = select("#AmplitudeButton");
-  waveLengthInput = select("#waveLength");
-  amplitudeInput.value(Amplitude);
-  waveLengthInput.value(waveLength*2);
-  pauseButton = select("#pauseButton");
-  pauseButton.mousePressed(pauseButtonPressed);
-  waveLengthButton = select("#waveLengthButton");
-  deltaT = select("#deltaT");
-  deltaT.changed(DeltaTChanged);
-  cnv.center("horizontal");
-  amplitudeButton.mousePressed(AmplitudeChanged);
-  waveLengthButton.mousePressed(waveLengthChanged);
-  displayTime = select("#displayTime");
-  resetButton = select("#resetButton");
-  resetButton.mousePressed(resetButtonPressed);
+  init();
   frameRate(60);
   background(1);
   var i;
