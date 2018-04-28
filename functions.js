@@ -16,6 +16,7 @@ function wave(way,time){
   function osziLengthChanged(){
     osziLength = osziLengthInput.value();
     oszilators = [osziLength];
+    xOffset =width/osziLength;
     osziNull();
   }
   function DeltaTChanged(){
