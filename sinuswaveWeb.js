@@ -20,9 +20,10 @@ function draw() {
   fill(250, 0, 0);
   var i;
   for(i = 1; i < osziLength+1; i++){
-      console.log(width/(3+osziLength)*i);
+     
       ellipse(i + width/(3+osziLength)*i, oszilators[i-1]+yOffset,5,5);
   }
+  console.log(width/(3+osziLength));
   displayTime.html("Zeit :"+time.toFixed(2));
   if(!pause){
     time+=timeSteps;
