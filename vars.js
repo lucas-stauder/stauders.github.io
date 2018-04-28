@@ -31,5 +31,5 @@ function init(){
     osziLengthButton = select("#osziLengthButton");
     osziLengthInput = select("#osziLength");
     osziLengthInput.value(osziLength);
-    osziLengthButton.mousePressed();
+    osziLengthButton.mousePressed(osziLengthChanged);
 }
