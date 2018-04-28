@@ -6,7 +6,7 @@ var amplitudeInput,amplitudeButton;
 var waveLengthInput, waveLengthButton;
 var vPhaseInput, vPhaseButton;
 var cnv,timeSteps=0.02;
-var yOffset;
+var yOffset,xOffset;
 var deltaT;
 var displayTime;
 var pause=false,pauseButton;
@@ -37,4 +37,5 @@ function init(){
     vPhaseInput = select("#vPhase");
     vPhaseInput.value(vPhase);
     vPhaseButton.mousePressed(vPhaseChanged);
+    xOffset = width/osziLength;
 }

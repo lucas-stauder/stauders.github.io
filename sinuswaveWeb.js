@@ -21,7 +21,7 @@ function draw() {
   var i;
   for(i = 1; i < osziLength+1; i++){
      
-      ellipse(i + (width/(3+osziLength))*i, oszilators[i-1]+yOffset,5,5);
+      ellipse(i + xOffset*i, oszilators[i-1]+yOffset,5,5);
   }
   displayTime.html("Zeit :"+time.toFixed(2));
   if(!pause){
