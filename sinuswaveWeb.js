@@ -1,7 +1,7 @@
 
 
 function setup() {
-  cnv = createCanvas(640,480);
+  cnv = createCanvas(1024,600);
   amplitudeInput = select("#Amplitude");
   amplitudeButton = select("#AmplitudeButton");
   waveLengthInput = select("#waveLength");
@@ -36,7 +36,7 @@ function draw() {
   fill(250, 0, 0);
   var i;
   for(i = 1; i < osziLength+1; i++){
-      ellipse(i + width/(3+osziLength)*i, oszilators[i-1]+height/2,5,5);
+      ellipse(i + width/(3+osziLength)*i, oszilators[i-1]+yOffset,5,5);
   }
   displayTime.html("Zeit :"+time.toFixed(2));
   if(!pause){
