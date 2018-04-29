@@ -17,9 +17,12 @@ function WaveControl() {
     this.waveLengthInput; 
     this.yOffset;
     this.waveLengthButton;
+    this.phaseOffset =0;
     this.Amplitude;
     this.amplitudeInput;
     this.amplitudeButton;
+    this.phaseOffsetButton;
+    this.phaseOffsetInput;
   }
 
 function init(){
@@ -45,7 +48,6 @@ function init(){
     vPhaseButton.mousePressed(vPhaseChanged);
     xOffset = width/osziLength;
 }
-//secondWave Setup
 function initFirstWave(){
     firstWave = new WaveControl();
     firstWave.waveLength= 3 ;
@@ -73,4 +75,8 @@ function initSecondWave(){
     secondWave.amplitudeInput.value(secondWave.Amplitude);
     secondWave.amplitudeButton.mousePressed(secondAmplitudeChanged);
     secondWave.waveLengthInput.value(secondWave.waveLength);
+    secondWave.phaseOffsetButton = select("#phaseOffsetButton");
+    secondWave.phaseOffsetInput = select("#phaseOffset");
+    secondWave.phaseOffsetInput.value(secondWave.phaseOffset);
+    secondWave.phaseOffsetButton.mousePressed(phaseOffsetChanged);
 }

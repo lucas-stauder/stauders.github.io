@@ -1,5 +1,5 @@
 function wave(way,time,wave){
-    return wave.Amplitude*Math.sin((time/period(wave))-(way/wave.waveLength));
+    return wave.Amplitude*Math.sin((time/period(wave))-(way/wave.waveLength)-wave.phaseOffset);
   }
   function clamp(val, min, max) {   
       return Math.max(min, Math.min(max, val));
@@ -55,3 +55,9 @@ function vPhaseChanged(){
 function period(wave){
   return wave.waveLength/vPhase;
 }
+function phaseOffsetChanged(){
+  secondWave.phaseOffset = secondWave.phaseOffsetInput.value();
+}
+Math.radians = function(degrees) {
+  return degrees * Math.PI / 180;
+};

@@ -2,7 +2,12 @@
 <html>
 <head>
   <meta charset="UTF-8">
-
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
   <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
   <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
   <script language="javascript" type="text/javascript" src="libraries/p5.dom.js"></script>
@@ -19,22 +24,25 @@
 <body>
 <center><h1>Der <!-- triviale Idealisierte --> Wellengenerator</h1></center>
 <div id="canvas"></div>
-<h2 class="middle">Erste Welle</h2>
+<h2 class="middle , red">Erste Welle</h2>
 <p class="middle">
-  Amplitude <input id="Amplitude" type="number"><button id="AmplitudeButton">Set</button>  
-  Wellenlänge <input id="waveLength" type="number"><button id="waveLengthButton">Set</button>
+  $\hat y$ <input id="Amplitude" type="number"><button id="AmplitudeButton">Set</button>  
+  $\lambda$ <input id="waveLength" type="number"><button id="waveLengthButton">Set</button>
 </p>
-<h2 class="middle">Zweite Welle</h2>
+<h2 class="middle , blue">Zweite Welle</h2>
 <p class="middle">
-    Amplitude <input id="Amplitude2" type="number"><button id="AmplitudeButton2">Set</button>  
-    Wellenlänge <input id="waveLength2" type="number"><button id="waveLengthButton2">Set</button>
-  </p>
+    $\hat y$ <input id="Amplitude2" type="number"><button id="AmplitudeButton2">Set</button>  
+    $\lambda$ <input id="waveLength2" type="number"><button id="waveLengthButton2">Set</button>
+</p>
+<p class="middle">
+    Phasen Verschiebung <input id="phaseOffset" type="number"><button id="phaseOffsetButton">Set</button>  
+</p>
 <h2 class="middle">Gemeinsamme Eigenschaften</h2>
 <p class="middle">
     Oszillatoren  <input id="osziLength" type="number"><button id="osziLengthButton">Set</button>  
-    V Phase <input id="vPhase" type="number"><button id="vPhaseButton">Set</button>
+    $V_{Phase}$ <input id="vPhase" type="number"><button id="vPhaseButton">Set</button>
   </p>
-<p class="middle">Delta T <input id="deltaT" type="range" min="0" max="0.1" step="0.01" value="0.02"></p>
+<p class="middle">$\Delta T$ <input id="deltaT" type="range" min="0" max="0.1" step="0.01" value="0.02"></p>
 <p id="displayTime" class="middle , red">Placeholder</p>
 <p class="middle , red"><button id="resetButton">Reset</button><button id="pauseButton">Start</button></p>
 </body>
