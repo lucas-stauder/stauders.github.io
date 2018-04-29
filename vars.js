@@ -7,7 +7,7 @@ var cnv,timeSteps=0.02;
 var yOffset,xOffset;
 var deltaT;
 var displayTime;
-var pause=false,pauseButton;
+var pause=true,pauseButton;
 var resetButton;
 var firstWave,secondWave,sumWave;
 

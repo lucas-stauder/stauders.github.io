@@ -37,6 +37,11 @@ function wave(way,time,wave){
   }
 function pauseButtonPressed(){
     pause = !pause;
+    if(pause){
+      pauseButton.html("Resume");
+    }else{
+      pauseButton.html("Pause");
+    }
 }
 function osziNull(wave){
   var i;
