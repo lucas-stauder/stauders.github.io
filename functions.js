@@ -1,14 +1,14 @@
 function wave(way,time){
-    return Amplitude*Math.sin((time/period())-(way/waveLength));
+    return firstWave.Amplitude*Math.sin((time/period())-(way/waveLength));
   }
   function clamp(val, min, max) {   
       return Math.max(min, Math.min(max, val));
   }
   function AmplitudeChanged(){
-    if(amplitudeInput.value()>100){
-      amplitudeInput.value(100);
+    if(firstWave.amplitudeInput.value()>100){
+      firstWave.amplitudeInput.value(100);
     }
-    Amplitude = amplitudeInput.value();
+    firstWave.Amplitude = firstWave.amplitudeInput.value();
   }
   function waveLengthChanged(){
     waveLength = firstWave.waveLengthInput.value();
