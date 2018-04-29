@@ -16,7 +16,7 @@ function draw() {
   var i;
   for(i=0;i<osziLength;i++){
       if((i)/vPhase<time){
-        oszilators[i]= wave(i,time);
+        oszilators[i]= wave(i,time,firstWave);
       }else{
         oszilators[i]= 0;
       }

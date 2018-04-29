@@ -1,5 +1,5 @@
-function wave(way,time){
-    return firstWave.Amplitude*Math.sin((time/period())-(way/waveLength));
+function wave(way,time,wave){
+    return wave.Amplitude*Math.sin((time/period())-(way/wave.waveLength));
   }
   function clamp(val, min, max) {   
       return Math.max(min, Math.min(max, val));
