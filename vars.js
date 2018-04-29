@@ -23,34 +23,10 @@ function WaveControl() {
   }
 
 function init(){
-    firstWave = new WaveControl();
-    secondWave = new WaveControl();
     sumWave = new WaveControl();
     sumWave.yOffset =130*3
-    firstWave.Amplitude = 60;
-    firstWave.yOffset =130;
-    secondWave.yOffset = 130*5;
-    firstWave.waveLength= 3 ;
-    secondWave.waveLength= 3 ;
-    secondWave.Amplitude = 60;
-    //FirstWave Setup
-    firstWave.amplitudeInput = select("#Amplitude");
-    firstWave.amplitudeButton = select("#AmplitudeButton");
-    firstWave.waveLengthInput = select("#waveLength");
-    firstWave.waveLengthButton = select("#waveLengthButton");
-    firstWave.waveLengthButton.mousePressed(waveLengthChanged);
-    firstWave.amplitudeInput.value(firstWave.Amplitude);
-    firstWave.amplitudeButton.mousePressed(AmplitudeChanged);
-    firstWave.waveLengthInput.value(firstWave.waveLength);
-    //secondWave Setup
-    secondWave.amplitudeInput = select("#Amplitude2");
-    secondWave.amplitudeButton = select("#AmplitudeButton2");
-    secondWave.waveLengthInput = select("#waveLength2");
-    secondWave.waveLengthButton = select("#waveLengthButton2");
-    secondWave.waveLengthButton.mousePressed(waveLengthChanged);
-    secondWave.amplitudeInput.value(firstWave.Amplitude);
-    secondWave.amplitudeButton.mousePressed(AmplitudeChanged);
-    secondWave.waveLengthInput.value(firstWave.waveLength);
+    initFirstWave();
+    initSecondWave();
     pauseButton = select("#pauseButton");
     pauseButton.mousePressed(pauseButtonPressed);
     deltaT = select("#deltaT");
@@ -68,4 +44,33 @@ function init(){
     vPhaseInput.value(vPhase);
     vPhaseButton.mousePressed(vPhaseChanged);
     xOffset = width/osziLength;
+}
+//secondWave Setup
+function initFirstWave(){
+    firstWave = new WaveControl();
+    firstWave.waveLength= 3 ;
+    firstWave.Amplitude = 60;
+    firstWave.yOffset =130;
+    firstWave.amplitudeInput = select("#Amplitude");
+    firstWave.amplitudeButton = select("#AmplitudeButton");
+    firstWave.waveLengthInput = select("#waveLength");
+    firstWave.waveLengthButton = select("#waveLengthButton");
+    firstWave.waveLengthButton.mousePressed(waveLengthChanged);
+    firstWave.amplitudeInput.value(firstWave.Amplitude);
+    firstWave.amplitudeButton.mousePressed(AmplitudeChanged);
+    firstWave.waveLengthInput.value(firstWave.waveLength);
+}
+function initSecondWave(){
+    secondWave = new WaveControl();
+    secondWave.yOffset = 130*5;
+    secondWave.waveLength= 3 ;
+    secondWave.Amplitude = 60;
+    secondWave.amplitudeInput = select("#Amplitude2");
+    secondWave.amplitudeButton = select("#AmplitudeButton2");
+    secondWave.waveLengthInput = select("#waveLength2");
+    secondWave.waveLengthButton = select("#waveLengthButton2");
+    secondWave.waveLengthButton.mousePressed(secondWaveLengthChanged);
+    secondWave.amplitudeInput.value(secondWave.Amplitude);
+    secondWave.amplitudeButton.mousePressed(secondAmplitudeChanged);
+    secondWave.waveLengthInput.value(secondWave.waveLength);
 }

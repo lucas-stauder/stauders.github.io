@@ -13,6 +13,15 @@ function wave(way,time,wave){
   function waveLengthChanged(){
     firstWave.waveLength = firstWave.waveLengthInput.value();
   }
+  function secondAmplitudeChanged(){
+    if(secondWave.amplitudeInput.value()>100){
+      secondWave.amplitudeInput.value(100);
+    }
+    secondWave.Amplitude = secondWave.amplitudeInput.value();
+  }
+  function secondWaveLengthChanged(){
+    secondWave.waveLength = secondWave.waveLengthInput.value();
+  }
   function osziLengthChanged(){
     osziLength = osziLengthInput.value();
     oszilators = [osziLength];
