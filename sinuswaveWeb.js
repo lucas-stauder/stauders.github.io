@@ -53,7 +53,6 @@ function draw() {
   displayTime.html("Zeit :"+time.toFixed(2));
   if(!pause){
     time+=timeSteps;
-    console.log(secondWave.phaseOffset);
   }
   
 }
