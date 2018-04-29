@@ -12,21 +12,29 @@ var deltaT;
 var displayTime;
 var pause=false,pauseButton;
 var resetButton;
+var firstWave,secondWave;
+
+function WaveControl() {
+    this.waveLengthInput; 
+    this.waveLengthButton;
+  }
 
 function init(){
+    firstWave = new WaveControl();
+    secondWave = new WaveControl();
     amplitudeInput = select("#Amplitude");
     amplitudeButton = select("#AmplitudeButton");
-    waveLengthInput = select("#waveLength");
+    firstWave.waveLengthInput = select("#waveLength");
+    firstWave.waveLengthButton = select("#waveLengthButton");
+    firstWave.waveLengthButton.mousePressed(waveLengthChanged);
     amplitudeInput.value(Amplitude);
-    waveLengthInput.value(waveLength);
+    firstWave.waveLengthInput.value(waveLength);
     pauseButton = select("#pauseButton");
     pauseButton.mousePressed(pauseButtonPressed);
-    waveLengthButton = select("#waveLengthButton");
     deltaT = select("#deltaT");
     deltaT.changed(DeltaTChanged);
     cnv.center("horizontal");
     amplitudeButton.mousePressed(AmplitudeChanged);
-    waveLengthButton.mousePressed(waveLengthChanged);
     displayTime = select("#displayTime");
     resetButton = select("#resetButton");
     resetButton.mousePressed(resetButtonPressed);

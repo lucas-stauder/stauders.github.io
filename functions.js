@@ -11,7 +11,7 @@ function wave(way,time){
     Amplitude = amplitudeInput.value();
   }
   function waveLengthChanged(){
-    waveLength = waveLengthInput.value();
+    waveLength = firstWave.waveLengthInput.value();
   }
   function osziLengthChanged(){
     osziLength = osziLengthInput.value();
