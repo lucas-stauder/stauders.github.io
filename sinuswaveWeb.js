@@ -1,13 +1,12 @@
 
 
 function setup() {
-  cnv = createCanvas(1024,600);
-  yOffset = height/3;
+  cnv = createCanvas(1024,900);
   init();
   frameRate(60);
   background(1);
-  var i;
-  osziNull();
+  osziNull(firstWave);
+  osziNull(secondWave);
 }
 
 
@@ -16,16 +15,29 @@ function draw() {
   var i;
   for(i=0;i<osziLength;i++){
       if((i)/vPhase<time){
-        oszilators[i]= wave(i,time,firstWave);
+        firstWave.oszilators[i]= wave(i,time,firstWave);
       }else{
-        oszilators[i]= 0;
+        firstWave.oszilators[i]= 0;
       }
     
+  }
+  for(i=0;i<osziLength;i++){
+    if((i)/vPhase<time){
+      secondWave.oszilators[i]= wave(i,time,secondWave);
+    }else{
+      secondWave.oszilators[i]= 0;
+    }
+  
+  }
+  for(i=0;i<osziLength;i++){
+    sumWave.oszilators[i]= secondWave.oszilators[i]+firstWave.oszilators[i];
   }
   fill(250, 0, 0);
   var i;
   for(i = 1; i < osziLength+1; i++){
-      ellipse((i-1) + xOffset*(i-1), oszilators[i-1]+yOffset,5,5);
+      ellipse((i-1) + xOffset*(i-1), firstWave.oszilators[i-1]+firstWave.yOffset,5,5);
+      ellipse((i-1) + xOffset*(i-1), secondWave.oszilators[i-1]+secondWave.yOffset,5,5);
+      ellipse((i-1) + xOffset*(i-1), sumWave.oszilators[i-1]+sumWave.yOffset,5,5);
   }
   displayTime.html("Zeit :"+time.toFixed(2));
   if(!pause){
